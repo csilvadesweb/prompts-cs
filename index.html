@@ -1,0 +1,848 @@
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">⚡</div>
+      <div>
+        <h1>Biblioteca de Prompts</h1>
+        <p id="count">3500 prompts</p>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="btnTheme" class="btn ghost" title="Alternar tema">🌗 Tema</button>
+      <button id="btnFavView" class="btn ghost" title="Somente favoritos">⭐ Favoritos</button>
+      <button id="btnExport" class="btn ghost" title="Exportar JSON">Exportar</button>
+      <label class="btn ghost filelabel" title="Importar JSON">
+        Importar
+        <input id="fileInput" type="file" accept="application/json" hidden="">
+      </label>
+      <div class="generator">
+        <input id="genQty" type="number" min="1" max="1000" value="50">
+        <button id="btnGen" class="btn" title="Gerar prompts aleatórios">Gerar</button>
+      </div>
+      <button id="btnClear" class="btn danger" title="Limpar biblioteca">🧹 Limpar</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="persona">Por Persona</button>
+      <button class="tab" data-tab="tema">Por Tema</button>
+      <button class="tab" data-tab="post">Por Post</button>
+    </nav>
+
+    <section class="controls">
+      <div class="search-wrap">
+        <span class="icon">🔎</span>
+        <input id="search" type="search" placeholder="Pesquisar prompts…" autocomplete="off">
+      </div>
+
+      <div class="filters">
+        <div class="select">
+          <label id="primaryLabel" for="primarySelect">Todas as Personas</label>
+          <select id="primarySelect"><option selected="">Todos</option><option>Advogado Consumerista</option><option>Copywriter</option><option>Especialista em SEO</option><option>Mentor de Carreira</option><option>Nutricionista</option><option>Professor de Tecnologia</option><option>Programador</option><option>Social Media</option></select>
+        </div>
+
+        <div class="select">
+          <label for="secondarySelect">Todos os Itens</label>
+          <select id="secondarySelect"><option selected="">Todos</option><option>Criação de Conteúdo</option><option>Desenvolvimento Web</option><option>Direito</option><option>Educação</option><option>Marketing</option><option>Negócios</option><option>Produtividade</option><option>Saúde e Bem-Estar</option></select>
+        </div>
+
+        <div class="select">
+          <label for="pageSize">Mostrar</label>
+          <select id="pageSize">
+            <option>10</option>
+            <option>20</option>
+            <option selected="">30</option>
+            <option>50</option>
+            <option>100</option>
+          </select>
+        </div>
+
+        <label class="favOnly"><input type="checkbox" id="onlyFav"> Somente favoritos</label>
+      </div>
+    </section>
+
+    <section id="chips" class="chips"><span class="chip">Total: 3500</span><span class="chip">Filtrados: 444</span><span class="chip">Exibindo: 50</span></section>
+
+    <section id="list" class="list" aria-live="polite"><article class="card">
+      <header class="card-head">
+        <h3 class="title">Carrossel Instagram • Educação • Advogado Consumerista • #3</h3>
+        <div class="meta">Advogado Consumerista • Educação • Carrossel Instagram</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#educação</span><span class="chip">#carrossel instagram</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um carrossel instagram sobre Educação. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Título de Blog • Criação de Conteúdo • Advogado Consumerista • #33</h3>
+        <div class="meta">Advogado Consumerista • Criação de Conteúdo • Título de Blog</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#criação de conteúdo</span><span class="chip">#título de blog</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um título de blog sobre Criação de Conteúdo. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Post LinkedIn • Criação de Conteúdo • Advogado Consumerista • #34</h3>
+        <div class="meta">Advogado Consumerista • Criação de Conteúdo • Post LinkedIn</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#criação de conteúdo</span><span class="chip">#post linkedin</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um post linkedin sobre Criação de Conteúdo. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Tweet/Thread • Criação de Conteúdo • Advogado Consumerista • #67</h3>
+        <div class="meta">Advogado Consumerista • Criação de Conteúdo • Tweet/Thread</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#criação de conteúdo</span><span class="chip">#tweet/thread</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um tweet/thread sobre Criação de Conteúdo. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Título de Blog • Produtividade • Advogado Consumerista • #69</h3>
+        <div class="meta">Advogado Consumerista • Produtividade • Título de Blog</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#produtividade</span><span class="chip">#título de blog</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um título de blog sobre Produtividade. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Vídeo Longo • Marketing • Advogado Consumerista • #81</h3>
+        <div class="meta">Advogado Consumerista • Marketing • Vídeo Longo</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#marketing</span><span class="chip">#vídeo longo</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um vídeo longo sobre Marketing. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Reels/TikTok • Saúde e Bem-Estar • Advogado Consumerista • #82</h3>
+        <div class="meta">Advogado Consumerista • Saúde e Bem-Estar • Reels/TikTok</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#saúde e bem-estar</span><span class="chip">#reels/tiktok</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um reels/tiktok sobre Saúde e Bem-Estar. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Tweet/Thread • Produtividade • Advogado Consumerista • #89</h3>
+        <div class="meta">Advogado Consumerista • Produtividade • Tweet/Thread</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#produtividade</span><span class="chip">#tweet/thread</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um tweet/thread sobre Produtividade. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Legenda • Criação de Conteúdo • Advogado Consumerista • #91</h3>
+        <div class="meta">Advogado Consumerista • Criação de Conteúdo • Legenda</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#criação de conteúdo</span><span class="chip">#legenda</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um legenda sobre Criação de Conteúdo. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Post LinkedIn • Marketing • Advogado Consumerista • #93</h3>
+        <div class="meta">Advogado Consumerista • Marketing • Post LinkedIn</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#marketing</span><span class="chip">#post linkedin</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um post linkedin sobre Marketing. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Vídeo Longo • Marketing • Advogado Consumerista • #95</h3>
+        <div class="meta">Advogado Consumerista • Marketing • Vídeo Longo</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#marketing</span><span class="chip">#vídeo longo</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um vídeo longo sobre Marketing. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Vídeo Longo • Educação • Advogado Consumerista • #105</h3>
+        <div class="meta">Advogado Consumerista • Educação • Vídeo Longo</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#educação</span><span class="chip">#vídeo longo</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um vídeo longo sobre Educação. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Vídeo Longo • Direito • Advogado Consumerista • #124</h3>
+        <div class="meta">Advogado Consumerista • Direito • Vídeo Longo</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#direito</span><span class="chip">#vídeo longo</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um vídeo longo sobre Direito. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">E-mail • Produtividade • Advogado Consumerista • #131</h3>
+        <div class="meta">Advogado Consumerista • Produtividade • E-mail</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#produtividade</span><span class="chip">#e-mail</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um e-mail sobre Produtividade. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Título de Blog • Produtividade • Advogado Consumerista • #139</h3>
+        <div class="meta">Advogado Consumerista • Produtividade • Título de Blog</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#produtividade</span><span class="chip">#título de blog</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um título de blog sobre Produtividade. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Legenda • Direito • Advogado Consumerista • #152</h3>
+        <div class="meta">Advogado Consumerista • Direito • Legenda</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#direito</span><span class="chip">#legenda</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um legenda sobre Direito. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Reels/TikTok • Desenvolvimento Web • Advogado Consumerista • #157</h3>
+        <div class="meta">Advogado Consumerista • Desenvolvimento Web • Reels/TikTok</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#desenvolvimento web</span><span class="chip">#reels/tiktok</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um reels/tiktok sobre Desenvolvimento Web. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Legenda • Marketing • Advogado Consumerista • #170</h3>
+        <div class="meta">Advogado Consumerista • Marketing • Legenda</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#marketing</span><span class="chip">#legenda</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um legenda sobre Marketing. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Carrossel Instagram • Marketing • Advogado Consumerista • #171</h3>
+        <div class="meta">Advogado Consumerista • Marketing • Carrossel Instagram</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#marketing</span><span class="chip">#carrossel instagram</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um carrossel instagram sobre Marketing. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Carrossel Instagram • Saúde e Bem-Estar • Advogado Consumerista • #173</h3>
+        <div class="meta">Advogado Consumerista • Saúde e Bem-Estar • Carrossel Instagram</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#saúde e bem-estar</span><span class="chip">#carrossel instagram</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um carrossel instagram sobre Saúde e Bem-Estar. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Legenda • Direito • Advogado Consumerista • #179</h3>
+        <div class="meta">Advogado Consumerista • Direito • Legenda</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#direito</span><span class="chip">#legenda</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um legenda sobre Direito. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Post LinkedIn • Produtividade • Advogado Consumerista • #203</h3>
+        <div class="meta">Advogado Consumerista • Produtividade • Post LinkedIn</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#produtividade</span><span class="chip">#post linkedin</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um post linkedin sobre Produtividade. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Vídeo Longo • Saúde e Bem-Estar • Advogado Consumerista • #217</h3>
+        <div class="meta">Advogado Consumerista • Saúde e Bem-Estar • Vídeo Longo</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#saúde e bem-estar</span><span class="chip">#vídeo longo</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um vídeo longo sobre Saúde e Bem-Estar. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">E-mail • Direito • Advogado Consumerista • #226</h3>
+        <div class="meta">Advogado Consumerista • Direito • E-mail</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#direito</span><span class="chip">#e-mail</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um e-mail sobre Direito. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Tweet/Thread • Marketing • Advogado Consumerista • #229</h3>
+        <div class="meta">Advogado Consumerista • Marketing • Tweet/Thread</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#marketing</span><span class="chip">#tweet/thread</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um tweet/thread sobre Marketing. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Carrossel Instagram • Negócios • Advogado Consumerista • #232</h3>
+        <div class="meta">Advogado Consumerista • Negócios • Carrossel Instagram</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#negócios</span><span class="chip">#carrossel instagram</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um carrossel instagram sobre Negócios. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">E-mail • Desenvolvimento Web • Advogado Consumerista • #236</h3>
+        <div class="meta">Advogado Consumerista • Desenvolvimento Web • E-mail</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#desenvolvimento web</span><span class="chip">#e-mail</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um e-mail sobre Desenvolvimento Web. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Tweet/Thread • Produtividade • Advogado Consumerista • #239</h3>
+        <div class="meta">Advogado Consumerista • Produtividade • Tweet/Thread</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#produtividade</span><span class="chip">#tweet/thread</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um tweet/thread sobre Produtividade. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Vídeo Longo • Marketing • Advogado Consumerista • #241</h3>
+        <div class="meta">Advogado Consumerista • Marketing • Vídeo Longo</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#marketing</span><span class="chip">#vídeo longo</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um vídeo longo sobre Marketing. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Vídeo Longo • Direito • Advogado Consumerista • #248</h3>
+        <div class="meta">Advogado Consumerista • Direito • Vídeo Longo</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#direito</span><span class="chip">#vídeo longo</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um vídeo longo sobre Direito. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Carrossel Instagram • Produtividade • Advogado Consumerista • #266</h3>
+        <div class="meta">Advogado Consumerista • Produtividade • Carrossel Instagram</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#produtividade</span><span class="chip">#carrossel instagram</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um carrossel instagram sobre Produtividade. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Vídeo Longo • Negócios • Advogado Consumerista • #276</h3>
+        <div class="meta">Advogado Consumerista • Negócios • Vídeo Longo</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#negócios</span><span class="chip">#vídeo longo</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um vídeo longo sobre Negócios. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">E-mail • Negócios • Advogado Consumerista • #278</h3>
+        <div class="meta">Advogado Consumerista • Negócios • E-mail</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#negócios</span><span class="chip">#e-mail</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um e-mail sobre Negócios. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">E-mail • Saúde e Bem-Estar • Advogado Consumerista • #279</h3>
+        <div class="meta">Advogado Consumerista • Saúde e Bem-Estar • E-mail</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#saúde e bem-estar</span><span class="chip">#e-mail</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um e-mail sobre Saúde e Bem-Estar. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Tweet/Thread • Direito • Advogado Consumerista • #282</h3>
+        <div class="meta">Advogado Consumerista • Direito • Tweet/Thread</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#direito</span><span class="chip">#tweet/thread</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um tweet/thread sobre Direito. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Tweet/Thread • Desenvolvimento Web • Advogado Consumerista • #285</h3>
+        <div class="meta">Advogado Consumerista • Desenvolvimento Web • Tweet/Thread</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#desenvolvimento web</span><span class="chip">#tweet/thread</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um tweet/thread sobre Desenvolvimento Web. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Tweet/Thread • Criação de Conteúdo • Advogado Consumerista • #288</h3>
+        <div class="meta">Advogado Consumerista • Criação de Conteúdo • Tweet/Thread</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#criação de conteúdo</span><span class="chip">#tweet/thread</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um tweet/thread sobre Criação de Conteúdo. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">E-mail • Produtividade • Advogado Consumerista • #289</h3>
+        <div class="meta">Advogado Consumerista • Produtividade • E-mail</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#produtividade</span><span class="chip">#e-mail</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um e-mail sobre Produtividade. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Reels/TikTok • Direito • Advogado Consumerista • #293</h3>
+        <div class="meta">Advogado Consumerista • Direito • Reels/TikTok</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#direito</span><span class="chip">#reels/tiktok</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um reels/tiktok sobre Direito. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Legenda • Marketing • Advogado Consumerista • #302</h3>
+        <div class="meta">Advogado Consumerista • Marketing • Legenda</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#marketing</span><span class="chip">#legenda</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um legenda sobre Marketing. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">E-mail • Marketing • Advogado Consumerista • #308</h3>
+        <div class="meta">Advogado Consumerista • Marketing • E-mail</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#marketing</span><span class="chip">#e-mail</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um e-mail sobre Marketing. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Vídeo Longo • Negócios • Advogado Consumerista • #310</h3>
+        <div class="meta">Advogado Consumerista • Negócios • Vídeo Longo</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#negócios</span><span class="chip">#vídeo longo</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um vídeo longo sobre Negócios. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Título de Blog • Marketing • Advogado Consumerista • #311</h3>
+        <div class="meta">Advogado Consumerista • Marketing • Título de Blog</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#marketing</span><span class="chip">#título de blog</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um título de blog sobre Marketing. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Legenda • Desenvolvimento Web • Advogado Consumerista • #313</h3>
+        <div class="meta">Advogado Consumerista • Desenvolvimento Web • Legenda</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#desenvolvimento web</span><span class="chip">#legenda</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um legenda sobre Desenvolvimento Web. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Título de Blog • Produtividade • Advogado Consumerista • #315</h3>
+        <div class="meta">Advogado Consumerista • Produtividade • Título de Blog</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#produtividade</span><span class="chip">#título de blog</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um título de blog sobre Produtividade. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Carrossel Instagram • Saúde e Bem-Estar • Advogado Consumerista • #327</h3>
+        <div class="meta">Advogado Consumerista • Saúde e Bem-Estar • Carrossel Instagram</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#saúde e bem-estar</span><span class="chip">#carrossel instagram</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um carrossel instagram sobre Saúde e Bem-Estar. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Carrossel Instagram • Saúde e Bem-Estar • Advogado Consumerista • #338</h3>
+        <div class="meta">Advogado Consumerista • Saúde e Bem-Estar • Carrossel Instagram</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#saúde e bem-estar</span><span class="chip">#carrossel instagram</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um carrossel instagram sobre Saúde e Bem-Estar. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">E-mail • Marketing • Advogado Consumerista • #340</h3>
+        <div class="meta">Advogado Consumerista • Marketing • E-mail</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#marketing</span><span class="chip">#e-mail</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um e-mail sobre Marketing. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">Carrossel Instagram • Desenvolvimento Web • Advogado Consumerista • #346</h3>
+        <div class="meta">Advogado Consumerista • Desenvolvimento Web • Carrossel Instagram</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#desenvolvimento web</span><span class="chip">#carrossel instagram</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um carrossel instagram sobre Desenvolvimento Web. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article><article class="card">
+      <header class="card-head">
+        <h3 class="title">E-mail • Negócios • Advogado Consumerista • #357</h3>
+        <div class="meta">Advogado Consumerista • Negócios • E-mail</div>
+      </header>
+      <div class="tagrow"><span class="chip">#advogado consumerista</span><span class="chip">#negócios</span><span class="chip">#e-mail</span></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt">Atue como Advogado Consumerista e crie um e-mail sobre Negócios. Use linguagem clara, inclua 3 exemplos práticos do contexto brasileiro, apresente um passo a passo e finalize com um CTA para conversão.</pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article></section>
+
+    <footer class="pager">
+      <button id="prev" class="btn" disabled="">◀</button>
+      <span id="pageInfo">Página 1 de 9</span>
+      <button id="next" class="btn">▶</button>
+    </footer>
+  </main>
+
+  <template id="cardTemplate">
+    <article class="card">
+      <header class="card-head">
+        <h3 class="title"></h3>
+        <div class="meta"></div>
+      </header>
+      <div class="tagrow"></div>
+      <details class="details">
+        <summary>Ver prompt</summary>
+        <pre class="prompt"></pre>
+      </details>
+      <div class="card-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn ghost similar">Parecidos</button>
+        <button class="btn ghost fav">⭐ Favoritar</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+
+
+</body>
